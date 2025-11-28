@@ -1,0 +1,82 @@
+
+Attiny10_LED.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         0000005e  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800040  00800040  000000b2  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  000000b2  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000000e4  2**2
+                  CONTENTS, READONLY
+  4 .debug_info   00000305  00000000  00000000  00000120  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_abbrev 000002d9  00000000  00000000  00000425  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_line   000000d9  00000000  00000000  000006fe  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_str    00000115  00000000  00000000  000007d7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0a c0       	rjmp	.+20     	; 0x16 <__ctors_end>
+   2:	11 c0       	rjmp	.+34     	; 0x26 <__bad_interrupt>
+   4:	10 c0       	rjmp	.+32     	; 0x26 <__bad_interrupt>
+   6:	0f c0       	rjmp	.+30     	; 0x26 <__bad_interrupt>
+   8:	0e c0       	rjmp	.+28     	; 0x26 <__bad_interrupt>
+   a:	0d c0       	rjmp	.+26     	; 0x26 <__bad_interrupt>
+   c:	0c c0       	rjmp	.+24     	; 0x26 <__bad_interrupt>
+   e:	0b c0       	rjmp	.+22     	; 0x26 <__bad_interrupt>
+  10:	0a c0       	rjmp	.+20     	; 0x26 <__bad_interrupt>
+  12:	09 c0       	rjmp	.+18     	; 0x26 <__bad_interrupt>
+  14:	08 c0       	rjmp	.+16     	; 0x26 <__bad_interrupt>
+
+00000016 <__ctors_end>:
+  16:	11 27       	eor	r17, r17
+  18:	1f bf       	out	0x3f, r17	; 63
+  1a:	cf e5       	ldi	r28, 0x5F	; 95
+  1c:	d0 e0       	ldi	r29, 0x00	; 0
+  1e:	de bf       	out	0x3e, r29	; 62
+  20:	cd bf       	out	0x3d, r28	; 61
+  22:	02 d0       	rcall	.+4      	; 0x28 <main>
+  24:	1a c0       	rjmp	.+52     	; 0x5a <_exit>
+
+00000026 <__bad_interrupt>:
+  26:	ec cf       	rjmp	.-40     	; 0x0 <__vectors>
+
+00000028 <main>:
+  28:	41 b1       	in	r20, 0x01	; 1
+  2a:	46 60       	ori	r20, 0x06	; 6
+  2c:	41 b9       	out	0x01, r20	; 1
+  2e:	12 9a       	sbi	0x02, 2	; 2
+  30:	12 9a       	sbi	0x02, 2	; 2
+  32:	4f e9       	ldi	r20, 0x9F	; 159
+  34:	56 e8       	ldi	r21, 0x86	; 134
+  36:	61 e0       	ldi	r22, 0x01	; 1
+  38:	41 50       	subi	r20, 0x01	; 1
+  3a:	50 40       	sbci	r21, 0x00	; 0
+  3c:	60 40       	sbci	r22, 0x00	; 0
+  3e:	e1 f7       	brne	.-8      	; 0x38 <main+0x10>
+  40:	00 c0       	rjmp	.+0      	; 0x42 <__SREG__+0x3>
+  42:	00 00       	nop
+  44:	12 98       	cbi	0x02, 2	; 2
+  46:	4f e9       	ldi	r20, 0x9F	; 159
+  48:	56 e8       	ldi	r21, 0x86	; 134
+  4a:	61 e0       	ldi	r22, 0x01	; 1
+  4c:	41 50       	subi	r20, 0x01	; 1
+  4e:	50 40       	sbci	r21, 0x00	; 0
+  50:	60 40       	sbci	r22, 0x00	; 0
+  52:	e1 f7       	brne	.-8      	; 0x4c <__SREG__+0xd>
+  54:	00 c0       	rjmp	.+0      	; 0x56 <__SREG__+0x17>
+  56:	00 00       	nop
+  58:	eb cf       	rjmp	.-42     	; 0x30 <main+0x8>
+
+0000005a <_exit>:
+  5a:	f8 94       	cli
+
+0000005c <__stop_program>:
+  5c:	ff cf       	rjmp	.-2      	; 0x5c <__stop_program>
