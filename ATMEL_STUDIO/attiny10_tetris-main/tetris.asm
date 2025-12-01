@@ -62,7 +62,6 @@
 .def	p_tmp			= R18
 .def	p_divr			= R19
 
-
 // LcdPrintField local
 .def	lcd_addr_cnt	= R24
 
@@ -91,7 +90,6 @@ brick_type_3_0:	.db 0x98, 0x46, 0x19, 0x62
 brick_type_4_0:	.db 0x70, 0x92, 0x70, 0x92
 brick_type_5_0:	.db 0xC8, 0x2A, 0xC8, 0x2A
 brick_type_6_0:	.db 0x29, 0xE0, 0x29, 0xE0
-
 
 digit_number_0:	.db 0x1F, 0x11, 0x1F, \
 					0x00, 0x1F, 0x01, \
@@ -264,10 +262,8 @@ _btn_none:
 	brlo	_sel_done		
 	ldi		drop_delay, DELAY_04S
 
-
 _sel_done:
 	rjmp    _main
-
 
 /*------------------------------------------------------------------------------------*/
 /*
@@ -362,10 +358,8 @@ SetPatternNumb:
 
 /*------------------------------------------------------------------------------------*/
 /*
-input:
-		none
-output:
-		none
+	input:  none
+	output: none
 */
 /*
 ShowIntro:
@@ -487,7 +481,6 @@ _dl:
 	rcall	BrickNextCounter
 
 	ret
-
 
 /*------------------------------------------------------------------------------------*/
 /*
@@ -887,4 +880,3 @@ _slbc_bt0:
 _slbc_ext:
 	sbi		PORTB, LCD_CS		// DISPLAY CS set high
 	ret
-
