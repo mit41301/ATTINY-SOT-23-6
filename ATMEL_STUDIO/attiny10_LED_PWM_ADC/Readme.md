@@ -30,6 +30,5 @@ Or you may find precompiled avrdude in **Arduino**:
 
 ## Contact
 
-Author：Wu Han  
-Homepage：http://wuhanstudio.cc  
-Contact：https://github.com/wuhanstudio/attiny10-example/issues
+ * Created: 2019/1/3 12:42:24
+ * Author : WuHan
