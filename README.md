@@ -10,4 +10,9 @@
 ## SOT23-6 to DIP
 ![IMG_7692](https://github.com/user-attachments/assets/767a44e4-a842-4632-9a6d-ccdb8d814b66)
 
+## USBASP
+![IMG_7902](https://github.com/user-attachments/assets/7fd03ada-6832-4d9e-aa97-fde51c75e67b)
 
+![IMG_7906](https://github.com/user-attachments/assets/10e413f2-d137-47df-b48d-637465c10a5d)
+
+![IMG_7908](https://github.com/user-attachments/assets/986056d1-ee12-42d9-ba3f-72026c16faf5)
