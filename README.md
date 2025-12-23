@@ -1,7 +1,7 @@
-## ATiny4
+## Atmel®ATtiny4
 ![IMG_7676](https://github.com/user-attachments/assets/aa112d0b-b24e-4ba3-be26-bd72b9403f99)
 
-## ATiny10
+## Atmel®ATtiny10
 ![IMG_7684](https://github.com/user-attachments/assets/56f72ba7-8b84-40a6-a93d-f29023dd9eec)
 
 ## SOT23-6 to SIP
